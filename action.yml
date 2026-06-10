@@ -1,0 +1,25 @@
+name: 'ZeroDrop Create Inbox'
+description: 'Generate a disposable email inbox for CI testing. No signup, no Docker, no SMTP config.'
+author: 'zerodrop-dev'
+
+branding:
+  icon: 'mail'
+  color: 'green'
+
+inputs:
+  api_key:
+    description: 'ZeroDrop Workspace API key (optional — omit for free sandbox mode)'
+    required: false
+    default: ''
+
+outputs:
+  inbox:
+    description: 'The generated email address (e.g. swift-x7k2m@zerodrop-sandbox.online)'
+    value: ${{ steps.generate.outputs.inbox }}
+  inbox_name:
+    description: 'The inbox name without domain (e.g. swift-x7k2m)'
+    value: ${{ steps.generate.outputs.inbox_name }}
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

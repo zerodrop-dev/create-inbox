@@ -1,0 +1,27 @@
+{
+  "name": "zerodrop-create-inbox",
+  "version": "1.0.0",
+  "description": "GitHub Action — generate a disposable ZeroDrop inbox for CI testing",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --license licenses.txt",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  },
+  "keywords": [
+    "github-action",
+    "email",
+    "testing",
+    "ci",
+    "playwright",
+    "cypress",
+    "disposable-email",
+    "zerodrop"
+  ],
+  "license": "MIT"
+}
